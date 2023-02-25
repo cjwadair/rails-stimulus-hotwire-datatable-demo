@@ -1,0 +1,8 @@
+
+<%= render(DataTableComponent.new(pagy: @pagy)) do |component| %>
+
+  <%= component.with_header(labels: [["Name", :name], ["Brewery", :brewery], ["Country", :country], ["Size", :configuration], ["Alc. Content", :abv], ["Type", :beer_type], ["Category", :category]]) %>
+  
+  <%= component.with_body(collection: @beers) %>
+
+<% end %>

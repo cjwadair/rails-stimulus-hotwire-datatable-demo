@@ -1,0 +1,12 @@
+<div class="grid grid-row" >
+    <span class="sticky top-0 bg-slate-100"><%= header %></span>
+  <%= turbo_frame_tag "beers" do %>
+    <span data-controller="infinite-scroll">
+      <%= body %>
+      <div class="invisible" data-infinite-scroll-target="pagination">
+        <%== pagy_nav(@pagy) %>
+      </div>
+    </span>
+    <div class="grid grid-cols"><%= footer %></div>
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+
+  <div class="grid gap-y-2 w-full" data-infinite-scroll-target="entries">
+    <% @collection.each do |item| %>
+      <div class="grid gap-x-2 grid-cols-7 auto-cols-max w-full items-stretch content-stretch bg-white p-4">
+        <span><%= item.name %></span>
+        <span><%= item.brewery %></span>
+        <span><%= item.country %></span>
+        <span><%= item.configuration %></span>
+        <span><%= number_to_percentage(item.abv * 100, precision: 1) %></span>
+        <span><%= item.beer_type %></span>
+        <span><%= item.category %></span>
+      </div>
+    <% end %>
+  </div>
+
+
+

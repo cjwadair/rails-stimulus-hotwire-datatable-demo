@@ -1,0 +1,14 @@
+
+<div class="sticky top-0 bg-slate-100">
+  <h2 class="text-xl pt-4">Data Table Sample App</h2>
+  <div class="bg-white p-4 border border-slate-200 rounded drop-shadow-sm mt-4">
+    <%= form_with url: "", method: :get, data: { turbo_frame: "beers", turbo_action: "replace" } do |form| %>
+      Search: <%= form.search_field :query, value: params[:query], oninput: "this.form.requestSubmit()", class:"border border-slate-400 rounded p-1" %>
+    <% end %>
+  </div>
+  <div class="grid grid-cols-7 gap-x-2 mt-4 auto-cols-max px-4 py-2">
+    <% @labels.each do |label| %>
+      <span><%= sort_link_to label[0], label[1], class: "pr-4", data: { turbo_action: "advance" } %></span>
+    <% end %>
+  </div>
+</div>
